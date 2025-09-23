@@ -1,0 +1,25 @@
+@mixin tabs {
+  &__tablist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__btn {
+    width: 100%;
+    color: black;
+    border: 1px solid black;
+
+    &.is-active {
+      color: red;
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

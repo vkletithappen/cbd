@@ -1,0 +1,25 @@
+@use "@/scss/helpers" as *;
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 43px;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--col-white);
+    transition: color var(--anim-normal);
+
+    @include hover {
+      color: var(--col-primary-1);
+    }
+  }
+}

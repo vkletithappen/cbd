@@ -1,0 +1,188 @@
+@use "@/scss/helpers" as *;
+
+.circle-link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+
+  &__icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fluid(60, 91);
+    height: fluid(60, 91);
+    border-radius: 50%;
+    transition: background-color var(--anim-normal);
+
+    &--hero {
+      position: relative;
+
+      &::before {
+        display: block;
+        content: "";
+        width: fluid(65, 95);
+        height: fluid(65, 95);
+        background-color: var(--col-white);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        transform: translateZ(-1px);
+        border-radius: 50%;
+        animation: pulse 2.5s infinite ease-in-out;
+      }
+    }
+  }
+
+  &__icon {
+    transition: color var(--anim-normal);
+
+    &--hero {
+      animation: bounce 2.5s infinite ease-in-out;
+      transition: animation-duration 0.5s linear;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+    transition: color var(--anim-normal);
+
+    &--white {
+      color: var(--col-white);
+    }
+  }
+
+  &--primary {
+    .circle-link__icon-wrapper {
+      background-color: var(--col-primary-1);
+    }
+
+    .circle-link__icon {
+      color: var(--col-white);
+    }
+
+    @include hover {
+      .circle-link__icon-wrapper {
+        background-color: var(--col-primary-2);
+      }
+
+      .circle-link__icon {
+        color: var(--col-white);
+      }
+    }
+  }
+
+  &--secondary {
+    .circle-link__icon-wrapper {
+      background-color: var(--col-primary-light-1);
+    }
+
+    .circle-link__icon {
+      color: var(--col-primary-1);
+    }
+
+    @include hover {
+      .circle-link__icon-wrapper {
+        background-color: var(--col-primary-1);
+      }
+
+      .circle-link__icon {
+        color: var(--col-white);
+      }
+    }
+  }
+
+  &--hero {
+    .circle-link__icon-wrapper {
+      background-color: var(--col-white);
+    }
+
+    .circle-link__icon {
+      color: var(--col-primary-2);
+    }
+
+    @include hover {
+      .circle-link__icon-wrapper {
+        background-color: var(--col-primary-1);
+      }
+
+      .circle-link__icon {
+        color: var(--col-white);
+      }
+
+      .circle-link__icon-wrapper::before {
+        background-color: var(--col-primary-1);
+      }
+    }
+  }
+
+  @include hover {
+    .circle-link__icon {
+      animation: bounceHorizontal 1.5s infinite ease-in-out;
+    }
+
+    .circle-link__icon--hero {
+      animation-name: bounce;
+      animation-duration: 1.5s;
+    }
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(8px);
+  }
+
+  60% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    scale: 0.9;
+    opacity: 0.7;
+  }
+
+  70% {
+    scale: 1.2;
+    opacity: 0;
+  }
+
+  100% {
+    scale: 0.9;
+    opacity: 0;
+  }
+}
+
+@keyframes bounceHorizontal {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    translate: 0 0;
+  }
+
+  40% {
+    translate: 6px 0;
+  }
+
+  60% {
+    translate: 3px 0;
+  }
+}

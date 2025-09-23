@@ -1,0 +1,159 @@
+@use "@/scss/helpers" as *;
+
+.accordion-categories {
+  position: relative;
+  padding-bottom: fluid(14, 24);
+  border-bottom: 1px solid var(--col-grey-light-1);
+  overflow: hidden;
+
+  &::after {
+    display: block;
+    content: '';
+    width: fluid(167, 320);
+    height: fluid(250, 479);
+    background-image: url('@/assets/img/categories-product-1.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: fluid(60, 182, 1200, 1920);
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+      visibility 0s linear 0.5s,
+      opacity 0.4s ease;
+
+    @include max-576 {
+      right: 0;
+      left: 50%;
+      translate: -50% 0;
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    color: var(--col-black);
+
+    @include hover {
+      color: var(--col-primary-2);
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: fluid(18, 36);
+    letter-spacing: -0.07em;
+    text-align: left;
+    color: currentColor;
+    transition: color var(--anim-normal);
+  }
+
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    display: inline-block;
+    width: fluid(24, 30);
+    height: fluid(24, 30);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    transition: rotate 0.5s;
+
+    &::before,
+    &::after {
+      display: block;
+      content: '';
+      background-color: var(--col-primary-1);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+    }
+
+    &::before {
+      width: 100%;
+      height: 2px;
+      transition: width 0.5s;
+    }
+
+    &::after {
+      width: 2px;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    box-sizing: content-box;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition:
+      max-height 0.5s ease-in-out,
+      opacity var(--anim-normal),
+      padding 0.5s ease-in-out;
+  }
+
+  &__wrapper {
+    padding-top: 26px;
+    max-width: fluid(380, 436, 1200, 1920);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    min-height: 419px;
+
+    @include max-768 {
+      padding-top: 32px;
+
+      p {
+        max-width: 293px;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    margin-bottom: 19px;
+
+    @include max-768 {
+      margin-top: 0;
+    }
+  }
+
+  &.open {
+    &::after {
+      visibility: visible;
+      opacity: 1;
+      transition:
+        visibility 0s linear 0s,
+        opacity 0.5s ease 0.3s;
+    }
+  }
+
+  &.open &__control {
+    color: var(--col-primary-1);
+  }
+
+  &.open &__content {
+    opacity: 1;
+
+    @include max-768 {
+      padding-bottom: fluid(82, 130, 375, 576);
+    }
+  }
+
+  &.open &__icon {
+    rotate: 270deg;
+  }
+
+  &.open &__icon::before {
+    width: 0px;
+  }
+}

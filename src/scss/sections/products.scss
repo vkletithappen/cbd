@@ -1,0 +1,169 @@
+@use "@/scss/helpers" as *;
+
+.products {
+  padding-top: fluid(55, 125);
+  margin-bottom: fluid(60, 120.5);
+
+  &__caption {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: fluid(29, 151);
+  }
+
+  &__title {
+    flex: 0 0 calc(1144 / 1756 * 100%);
+
+    @include max-1440 {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include max-1440 {
+        display: block;
+      }
+    }
+  }
+
+  &__desc-block {
+    flex: 0 0 calc(448 / 1756 * 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 52px;
+    padding-top: 15px;
+    padding-right: 49px;
+
+    @include max-1920 {
+      padding-right: 0;
+    }
+
+    @include max-1440 {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: fluid(16, 20);
+  }
+
+  &__item {
+    grid-column: span 2;
+    transition: translate 0.4s ease-in-out;
+
+    @include max-1200 {
+      grid-column: span 3;
+    }
+
+    @include max-768 {
+      grid-column: span 6;
+    }
+  }
+
+  &__item:nth-child(-n + 3) {
+    @include hover {
+      translate: 0 -80px;
+    }
+  }
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: fluid(12, 20) fluid(12, 20) fluid(18, 32) fluid(12, 20);
+  border-radius: 15px;
+  background-color: var(--col-white);
+  height: 100%;
+  transition: box-shadow var(--anim-normal);
+
+  &__img-wrapper {
+    align-self: center;
+    margin-bottom: fluid(16, 31);
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: fluid(21, 30);
+    height: 100%;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid(10, 17);
+    height: 100%;
+
+    @include max-768 {
+      height: auto;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(18, 32);
+    color: var(--col-black);
+    transition: color var(--anim-normal);
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: auto;
+    font-weight: 400;
+    font-size: fluid(14, 20);
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+  }
+
+  &__link {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: fluid(3, 6);
+    width: fluid(46, 69);
+    height: fluid(46, 69);
+    border-radius: 50%;
+    color: var(--col-primary-1);
+    background-color: var(--col-primary-light-1);
+    transition: color var(--anim-normal), background-color 0.5s ease-in-out;
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__link-icon {
+    width: fluid(16, 24);
+    height: auto;
+  }
+
+  @include hover {
+    box-shadow: 0 12px 30px 0 rgba(45, 45, 45, 0.18);
+
+    .product-card__title {
+      color: var(--col-primary-1);
+    }
+
+    .product-card__link {
+      color: var(--col-white);
+      background-color: var(--col-primary-1);
+    }
+  }
+}

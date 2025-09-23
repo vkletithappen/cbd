@@ -1,0 +1,60 @@
+@use "@/scss/helpers" as *;
+
+.hero {
+  padding-top: fluid(55, 103);
+  background-image: url('@/assets/img/hero-bg.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  @include max-768 {
+    background-image: url('@/assets/img/hero-bg-mobile.avif');
+  }
+
+  &__container {
+    position: relative;
+    padding-bottom: 133.5px;
+
+    &::after {
+      display: block;
+      content: '';
+      width: fluid(50, 80);
+      height: fluid(94, 391);
+      background-image: url('@/assets/img/hero-decor.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      @include max-576 {
+        right: 26px;
+      }
+    }
+
+    @include max-768 {
+      padding-left: 16px;
+      padding-bottom: 40.5px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__desc {
+    margin-bottom: 59px;
+    max-width: fluid-mobile(306.5, 521);
+
+    @include max-768 {
+      margin-bottom: 258px;
+    }
+  }
+
+  &__title {
+    margin-bottom: fluid(39, 87);
+    max-width: 684px;
+  }
+}

@@ -1,0 +1,36 @@
+@use "../helpers" as *;
+
+.nav-dropdown {
+  min-width: 270px;
+  border-radius: 20px;
+  box-shadow: 0 14px 32px 0 rgba(44, 56, 70, 0.15);
+  background: lightblue;
+
+  &--menu {
+    min-width: 100%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  &__link {
+    display: inline-flex;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    background-color: transparent;
+    overflow: hidden;
+
+    @include hover {
+      background-color: grey;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "@/scss/helpers" as *;
+
+.payments {
+  display: flex;
+  align-items: center;
+  gap: 41px;
+
+  &__item {
+    transition: filter var(--anim-normal);
+
+    @include hover {
+      filter: brightness(2);
+    }
+  }
+}

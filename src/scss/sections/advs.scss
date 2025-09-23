@@ -1,0 +1,261 @@
+@use "@/scss/helpers" as *;
+
+.advs {}
+
+.top-advs {
+
+  @include max-1440 {
+    background-image: url('@/assets/img/advs-bg.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @include max-768 {
+    background-image: url('@/assets/img/advs-bg-mobile.avif');
+    background-position: center top;
+  }
+
+  &__container {
+    padding-top: 80px;
+    padding-left: fluid(16, 100);
+    padding-bottom: fluid(29, 91);
+
+    height: fluid(483, 999);
+    border-radius: 30px 30px 0 0;
+    background-image: url('@/assets/img/advs-bg.avif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    @include max-1440 {
+      background-image: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  &__pretitle {
+    margin: 0;
+    max-width: 522px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.22;
+    letter-spacing: -0.07em;
+    color: var(--col-white);
+
+    @include max-1440 {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-top: auto;
+    max-width: 852px;
+
+    span {
+      -webkit-mask-image: linear-gradient(-75deg, rgba(255, 255, 255, .6) 30%, #fff 50%, rgba(255, 255, 255, .6) 70%);
+      -webkit-mask-size: 200%;
+      animation: shine 2s infinite;
+    }
+  }
+}
+
+.bottom-advs {
+  @include max-1440 {
+    background-color: var(--col-white);
+  }
+
+  &__container {
+    padding-top: fluid(35, 62);
+    padding-left: fluid(40, 100, 1440, 1920);
+    padding-right: fluid(40, 78, 1440, 1920);
+    padding-bottom: fluid(48, 73);
+
+    border-radius: 0 0 30px 30px;
+    background-color: var(--col-white);
+    background-image: url('@/assets/img/advs-bottom-container-decor.svg');
+    background-repeat: no-repeat;
+    background-position: right 100px bottom;
+
+    @include max-1440 {
+      background-image: none;
+      background-color: transparent;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: fluid(92, 100);
+
+    @include max-1200 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+    }
+  }
+
+  &__text-block {
+    flex: 0 0 calc(375 / 1578 * 100%);
+    padding-top: 6px;
+  }
+
+  &__desktop-text {
+    @include max-1440 {
+      display: none;
+    }
+  }
+
+  &__mobile-text {
+    display: none;
+
+    @include max-1440 {
+      display: block;
+    }
+  }
+
+  &__list {
+    flex: 0 0 calc(1049 / 1578 * 100%);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: fluid(26, 102);
+
+    @include max-1024 {
+      flex-direction: column;
+    }
+  }
+
+  &__legal-department {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 85px;
+    background-image: url('@/assets/img/leagl-bg.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @include max-1200 {
+      width: fit-content;
+    }
+
+    @include max-1024 {
+      padding-top: 114px;
+      height: auto;
+      background-position: center top;
+    }
+
+    span {
+      display: none;
+      font-family: var(--ff-2);
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 1.05;
+      color: var(--col-black);
+
+      @include max-1200 {
+        display: block;
+        padding-left: 110px;
+      }
+
+      @include max-1024 {
+        padding-left: 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.list-advs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: fluid(33, 124);
+  column-gap: fluid(20, 63);
+
+  @include max-768 {
+    column-gap: 0;
+  }
+
+  &__item {
+    padding-top: 69px;
+    background-image: url('@/assets/img/advs-icon-1.svg');
+    background-repeat: no-repeat;
+    background-size: 48px 48px;
+    background-position: left top;
+
+    &--second {
+      background-image: url('@/assets/img/advs-icon-2.svg');
+    }
+
+    &--third {
+      background-image: url('@/assets/img/advs-icon-3.svg');
+    }
+
+    &--fourth {
+      background-image: url('@/assets/img/advs-icon-4.svg');
+    }
+
+    @include max-768 {
+      grid-column: span 2;
+      background-size: 52px 52px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    line-height: 1.05;
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(24, 40);
+    color: var(--col-black);
+  }
+}
+
+.links-advs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &__item {
+    &--desktop {
+      @include max-1200 {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include max-1200 {
+        display: block;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 5px 46px;
+  }
+}
+
+@keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}

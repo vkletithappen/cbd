@@ -1,0 +1,57 @@
+@use "@/scss/helpers" as *;
+
+.header {
+  position: relative;
+  z-index: 3;
+
+  padding-top: fluid(18, 29);
+  padding-bottom: fluid(17.5, 30);
+  background-color: var(--col-white);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+    gap: fluid(50, 144, 1440, 1920);
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    width: fluid(135, 199);
+    height: auto;
+  }
+
+  &__nav {
+    @include max-1200 {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: fluid(30, 42, 1440, 1920);
+  }
+
+  &__phone {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+
+    @include max-576 {
+      display: none;
+    }
+  }
+
+  &__btn {
+    @include max-1440 {
+      display: none;
+    }
+  }
+}

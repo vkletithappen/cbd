@@ -1,0 +1,23 @@
+.btn-top {
+  position: fixed;
+  z-index: 2;
+  bottom: 50px;
+  right: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+  visibility: visible;
+  transition:
+    opacity var(--anim-long),
+    visibility var(--anim-long);
+
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

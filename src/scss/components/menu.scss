@@ -1,0 +1,97 @@
+@use "@/scss/helpers" as *;
+
+.menu {
+  position: absolute;
+  overflow-y: auto;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: var(--col-white);
+  translate: 0 -100%;
+  transition: translate 0.5s ease;
+
+  padding-top: fluid(15, 50);
+  padding-bottom: 75px;
+
+  @include max-1200 {
+    height: 100svh;
+  }
+
+  &.is-active {
+    translate: 0 1px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+
+    width: 100%;
+    max-width: 1192px;
+
+    @include max-1024 {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    @include max-768 {
+      gap: 158px;
+    }
+  }
+
+  &__nav {
+    padding-left: fluid(35, 49);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 19px;
+
+    @include max-1024 {
+      padding-top: 0;
+    }
+  }
+
+  &__phone-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: fluid(40, 104);
+  }
+
+  &__phone-text {
+    margin-bottom: fluid(24, 43);
+    max-width: 600px;
+    font-weight: 400;
+    font-size: fluid(18, 28);
+    line-height: 1.43;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+
+    @include max-1024 {
+      line-height: 1;
+    }
+  }
+
+  &__phone {
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(24, 60);
+    color: var(--col-black);
+  }
+
+  &__btn {
+    min-height: fluid(49, 73);
+    padding: 5px 65px;
+    border-radius: 45px;
+    font-size: fluid(18, 24);
+
+    @include max-576 {
+      width: 100%;
+    }
+  }
+}

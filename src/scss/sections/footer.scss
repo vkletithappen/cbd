@@ -1,0 +1,232 @@
+@use "@/scss/helpers" as *;
+
+.footer {
+  background-color: var(--col-dark-1);
+
+  &__content {
+    margin-bottom: fluid(39, 127);
+  }
+}
+
+.header-footer {
+  padding-top: 31px;
+  padding-bottom: 31px;
+  border-bottom: 1px solid var(--col-white-01);
+
+  @include max-1024 {
+    padding-top: 40px;
+  }
+
+  @include max-768 {
+    border: none;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: fluid(40, 100, 1440, 1920);
+    padding-right: fluid(40, 101, 1440, 1920);
+
+    @include max-1440 {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    @include max-1024 {
+      flex-direction: column;
+      gap: 45px;
+    }
+  }
+
+  &__scroller {
+    flex: 0 0 calc(1073 / 1556 * 100%);
+    overflow: hidden;
+
+    @include max-1024 {
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    @include max-1024 {
+      align-self: flex-start;
+    }
+
+    @include max-576 {
+      align-self: center;
+      width: 100%;
+    }
+
+    @include hover {
+      background-color: var(--col-primary-1);
+    }
+  }
+}
+
+.content-footer {
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: fluid(38, 50);
+
+    padding-top: fluid(21, 119);
+    padding-left: fluid(40, 100, 1440, 1920);
+    padding-right: fluid(40, 162, 1440, 1920);
+
+    @include max-1440 {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    @include max-768 {
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    gap: fluid(70, 174, 1200, 1920);
+
+    @include max-1200 {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    margin-bottom: 33px;
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--col-grey-1);
+  }
+
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13.5px;
+  }
+
+  &__sublink {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.07em;
+    color: var(--col-white);
+  }
+
+  &__accordions {
+    display: none;
+
+    @include max-1200 {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex: 0 0 45%;
+    }
+
+    @include max-768 {
+      max-width: 100%;
+    }
+  }
+
+  &__contacts {
+    min-width: 300px;
+
+    @include max-1200 {
+      padding-top: 20px;
+    }
+
+    @include max-768 {
+      padding-top: 0;
+    }
+  }
+}
+
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__phone {
+    margin-bottom: fluid(27, 33);
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--col-white);
+  }
+
+  &__address {
+    margin-bottom: fluid(33, 58);
+    max-width: 300px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.07em;
+    color: var(--col-white);
+  }
+
+  &__socials {
+    margin-left: 4px;
+  }
+}
+
+.bottom-footer {
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding-left: fluid(40, 100, 1440, 1920);
+    padding-right: fluid(40, 144, 1440, 1920);
+    padding-bottom: 28px;
+
+    @include max-1440 {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    @include max-1024 {
+      flex-direction: column;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.bottom-footer-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: -0.07em;
+  color: var(--col-grey-2);
+
+  a {
+    color: var(--col-primary-1);
+    text-decoration: none;
+    transition: color var(--anim-normal);
+
+    @include hover {
+      color: var(--col-primary-2);
+    }
+  }
+}

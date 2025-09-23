@@ -1,0 +1,47 @@
+@use "@/scss/helpers" as *;
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: fluid(11, 13) 0;
+    font-weight: 400;
+    font-size: fluid(22, 36);
+    letter-spacing: -0.07em;
+    color: var(--col-grey-light-2);
+    transition: color var(--anim-normal);
+
+    &::before {
+      display: block;
+      content: '';
+      width: 30.5px;
+      height: 14px;
+      background-image: url('@/assets/img/nav-menu-link-decor.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      left: -50px;
+      top: 27px;
+
+      scale: 0;
+      opacity: 0;
+
+      transition: rotate 0.6s ease-in-out, scale var(--anim-normal), opacity var(--anim-normal);
+    }
+
+    @include hover {
+      color: var(--col-black);
+
+      &::before {
+        rotate: 360deg;
+        opacity: 1;
+        scale: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,170 @@
+@use "@/scss/helpers" as *;
+
+.about-cbd {
+  margin-bottom: fluid(20.5, 80);
+
+  @include max-1440 {
+    background-image: url('@/assets/img/about-cbd-bg-md.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+  }
+
+  @include max-576 {
+    background-image: url('@/assets/img/about-cbd-bg-mobile.avif');
+    background-position: center center;
+  }
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: fluid(54, 96);
+    padding-left: 100px;
+    padding-bottom: fluid(54.5, 81);
+    padding-right: 128px;
+    border-radius: 30px;
+    background-image: url('@/assets/img/about-cbd-bg.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include max-1920 {
+      padding-right: 100px;
+    }
+
+    @include max-1440 {
+      background-image: none;
+      padding-left: 16px;
+      padding-right: 2px;
+    }
+
+    @include max-1200 {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    flex: 0 0 calc(620 / 1528 * 100%);
+    max-width: 610px;
+
+    @include max-1200 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    flex: 0 0 calc(829 / 1528 * 100%);
+    padding-top: 337px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: fluid(40, 64, 1200, 1920) fluid(64, 131, 1200, 1920);
+
+    @include max-1200 {
+      padding-top: 0;
+      row-gap: fluid(27, 40, 375, 1200);
+      margin-bottom: 47px;
+    }
+
+    @include max-768 {
+      column-gap: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid(17, 28);
+
+    @include max-768 {
+      grid-column: span 2;
+    }
+  }
+
+  &__year {
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(32, 48);
+    color: var(--col-white);
+  }
+
+  &__decor-year {
+    display: block;
+    margin-top: 6px;
+    width: 143px;
+    width: fluid(95, 143);
+    height: 50px;
+    height: fluid(33, 50);
+    background-image: url('@/assets/img/2024-icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__text {
+    max-width: 316px;
+
+    &--lg {
+      max-width: 349px;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    left: 100px;
+    bottom: 88px;
+    z-index: 1;
+
+    @include max-1440 {
+      left: 16px;
+    }
+
+    @include max-1200 {
+      position: static;
+    }
+  }
+}
+
+.clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  @include max-1440 {
+    display: none;
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 0;
+  animation: cloudAnimate calc(2s * var(--animation-duration)) linear infinite;
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+}
+
+
+@keyframes cloudAnimate {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  25%,
+  75% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}

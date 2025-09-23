@@ -1,0 +1,76 @@
+@use "@/scss/helpers" as *;
+
+.btn {
+  @include flex-center(true);
+  padding: 5px 32px;
+  min-height: fluid-mobile(49, 55);
+  border-radius: 30px;
+  font-family: var(--ff-1);
+  font-weight: 400;
+  font-size: fluid-mobile(18, 20);
+  letter-spacing: -0.07em;
+  color: var(--col-white);
+  background-color: var(--col-primary-1);
+  transition: background-color var(--anim-normal), color var(--anim-normal);
+  user-select: none;
+
+  @include hover {
+    background-color: var(--col-primary-2);
+    color: var(--col-white);
+  }
+
+  &:active {
+    background-color: var(--col-primary-2);
+  }
+
+  &--wa {
+    min-height: 55px;
+    font-size: 20px;
+  }
+
+  &--lg {
+    min-height: fluid(55, 73);
+    padding: 5px 78px;
+    border-radius: 100px;
+    font-size: fluid(20, 24);
+  }
+
+  &--secondary {
+    color: var(--col-primary-1);
+    background-color: var(--col-primary-light-1);
+
+    @include hover {
+      background-color: var(--col-primary-1);
+    }
+  }
+
+  &--white-bg {
+    background-color: var(--col-white);
+  }
+
+  &--primary-text {
+    color: var(--col-primary-1);
+  }
+
+  &--black-text {
+    color: var(--col-black);
+  }
+
+  &__text {
+    &--desktop {
+      display: inline;
+
+      @include max-1440 {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include max-1440 {
+        display: inline;
+      }
+    }
+  }
+}

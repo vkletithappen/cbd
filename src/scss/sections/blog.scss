@@ -1,0 +1,105 @@
+@use "@/scss/helpers" as *;
+
+.blog {
+
+  @include max-1440 {
+    background-color: var(--col-white);
+  }
+
+  &__btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 47px;
+    padding-bottom: fluid(47.5, 70);
+    background-color: var(--col-white);
+
+    @include max-1440 {
+      padding-top: 0;
+    }
+  }
+}
+
+.blog-desktop {
+
+  @include max-768 {
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding-left: fluid(40, 100, 1440, 1920);
+    padding-top: 100px;
+    padding-right: fluid(40, 111, 1440, 1920);
+
+    border-radius: 30px 30px 0 0;
+    background-color: var(--col-white);
+
+    @include max-1440 {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+
+    @include max-1200 {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__data {
+    flex: 0 0 calc(412 / 1545 * 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid(40, 142, 768, 1920);
+  }
+
+  &__content {
+    flex: 0 0 calc(974 / 1545 * 100%);
+  }
+
+  &__list {
+    padding-top: 3px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 51px;
+    padding-bottom: 40px;
+
+    @include max-1200 {
+      gap: 26px;
+    }
+  }
+
+  &__item {
+    grid-column: span 6;
+
+    @include max-1200 {
+      grid-column: span 3;
+    }
+  }
+}
+
+.blog-mobile {
+  display: none;
+  padding-top: 38px;
+
+  @include max-768 {
+    display: block;
+  }
+
+  &__container {
+    --container-offset: #{fluid(16, 32, 375, 1440)};
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-left: calc(var(--container-offset) + 8px);
+  }
+
+  &__title {
+    margin-bottom: 28px;
+  }
+}
