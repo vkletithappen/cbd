@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about-page.html" },
+    { "source": "/blog-inner", "destination": "/blog-inner.html" },
+    { "source": "/blog-page", "destination": "/blog-page.html" },
+    { "source": "/categories-inner", "destination": "/categories-inner.html" },
+    { "source": "/categories-page", "destination": "/categories-page.html" },
+    { "source": "/contacts", "destination": "/contacts.html" },
+    { "source": "/legal-section", "destination": "/legal-section.html" },
+    { "source": "/product-page", "destination": "/product-page.html" },
+    { "source": "/production", "destination": "/production.html" }
+  ]
+}
