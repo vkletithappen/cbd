@@ -1,0 +1,86 @@
+@use "@/scss/helpers" as *;
+
+.categories-inner-text {
+  padding-top: fluid(57, 114);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(57, 119);
+
+    padding-left: fluid(40, 100, 1200, 1920);
+    padding-right: 84px;
+
+    @include max-1920 {
+      padding-right: fluid(40, 100, 1200, 1920);
+    }
+
+    @include max-1200 {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    &> :first-child {
+      flex: 0 0 calc(520 / 1572 * 100%);
+    }
+
+    &> :nth-child(2) {
+      flex: 0 0 calc(932 / 1572 * 100%);
+      padding-top: 5px;
+
+      @include max-1440 {
+        padding-top: 0;
+      }
+    }
+
+    &--border {
+      padding-bottom: fluid(30, 113, 1200, 1920);
+      border-bottom: 1px solid var(--col-grey-light-1);
+
+      @include max-1200 {
+        padding-bottom: 0;
+        border: none;
+      }
+    }
+
+    @include max-1024 {
+      flex-direction: column;
+      gap: 29px;
+    }
+  }
+
+  &__subblock {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(40, 60);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid(33, 40);
+  }
+
+  &__item {
+    position: relative;
+    max-width: 735px;
+
+    &::before {
+      display: block;
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--col-black);
+      position: absolute;
+      left: -14px;
+      top: fluid(7, 11);
+    }
+  }
+}

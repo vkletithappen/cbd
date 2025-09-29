@@ -1,0 +1,125 @@
+@use "@/scss/helpers" as *;
+
+.page-form {
+  display: flex;
+  justify-content: space-between;
+
+  @include max-1200 {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &__title {
+    flex: 0 0 calc(572 / 1574 * 100%);
+  }
+
+  &__content {
+    flex: 0 0 calc(834 / 1574 * 100%);
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 6px;
+
+    @include max-1920 {
+      padding-top: 0;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: fluid(20, 28);
+    line-height: 1.43;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+
+    @include max-768 {
+      line-height: 1.22;
+      margin-bottom: 49px;
+    }
+  }
+
+  &__fieldset {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: fluid(47, 60);
+    margin-bottom: fluid(33, 50);
+  }
+
+  &__field {
+    position: relative;
+    width: 100%;
+
+    @include max-768 {
+      grid-column: span 2;
+    }
+
+    &--lg {
+      grid-column: span 2;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: fluid(54, 69);
+    background-color: transparent;
+    border-bottom: 1px solid var(--col-grey-light-1);
+    font-weight: 400;
+    font-size: fluid(18, 24);
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+    transition: border-color var(--anim-normal);
+
+    &:not(:placeholder-shown)+.page-form__label {
+      translate: -1px -45px;
+      font-size: 15px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:focus {
+      border-color: var(--col-black);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: 1px;
+    top: 50%;
+    translate: 0 -50%;
+    font-weight: 400;
+    font-size: fluid(18, 24);
+    letter-spacing: -0.07em;
+    color: var(--col-grey-light-2);
+    transition: translate var(--anim-normal);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid(16, 49);
+
+    @include max-1024 {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__agreement {
+    margin: 0;
+    max-width: 387px;
+    font-weight: 400;
+    font-size: fluid(14, 18);
+    letter-spacing: -0.07em;
+    color: var(--col-grey-light-2);
+  }
+
+  &__btn {
+    @include max-576 {
+      width: 100%;
+    }
+  }
+}

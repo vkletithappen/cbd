@@ -1,0 +1,58 @@
+@use "@/scss/helpers" as *;
+
+.about-products {
+  padding-top: fluid(97, 124);
+  overflow: hidden;
+
+  &__caption {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: fluid(29, 151);
+  }
+
+  &__title {
+    flex: 0 0 calc(1144 / 1756 * 100%);
+
+    @include max-1440 {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include max-1440 {
+        display: block;
+      }
+    }
+  }
+
+  &__desc-block {
+    flex: 0 0 calc(448 / 1756 * 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 52px;
+    padding-top: 15px;
+    padding-right: 49px;
+
+    @include max-1920 {
+      padding-right: 0;
+    }
+
+    @include max-1440 {
+      display: none;
+    }
+  }
+
+  &__link-block {
+    display: none;
+
+    @include max-1440 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}

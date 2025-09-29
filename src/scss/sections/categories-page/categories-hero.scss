@@ -1,0 +1,173 @@
+@use "@/scss/helpers" as *;
+
+.categories-hero {
+  padding-top: fluid(31, 54);
+
+  &__title {
+    margin-bottom: fluid(27.5, 46);
+  }
+
+  &__desktop {
+    @include max-1024 {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include max-1024 {
+      display: block;
+    }
+  }
+}
+
+.categories-hero-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+
+  &__item {
+    grid-column: span 2;
+
+    @include max-1200 {
+      grid-column: span 3;
+    }
+
+    &:hover {
+      .categories-hero-card__content {
+        transform: rotateY(180deg);
+        transition: transform 1s;
+      }
+
+      .categories-hero-card__link .circle-link__icon-wrapper {
+        background-color: var(--col-white);
+      }
+
+      .categories-hero-card__link .circle-link__icon {
+        color: var(--col-primary-1);
+      }
+
+      .categories-hero-card__link .circle-link__text {
+        color: var(--col-white);
+      }
+
+      .categories-hero-card__img {
+        translate: 0 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.categories-hero-card {
+  width: 100%;
+  min-height: fluid(450, 598, 1440, 1920);
+  position: relative;
+  perspective: 2000px;
+  cursor: pointer;
+
+  @include max-1200 {
+    min-height: 300px;
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+  }
+
+  &__front,
+  &__back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-top: 54px;
+    padding-left: 40px;
+    padding-bottom: 43px;
+
+    backface-visibility: hidden;
+  }
+
+  &__front {
+    background-color: var(--col-white);
+  }
+
+  &__back {
+    transform: rotateY(180deg);
+    overflow: hidden;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 200%;
+      height: 200%;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      background-image: url('@/assets/img/categories-hero-card-bg.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+      background-position: center;
+      animation: rotate 30s linear infinite;
+      pointer-events: none;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(22, 40);
+    line-height: 1.05;
+    color: var(--col-black);
+
+    &--back {
+      color: var(--col-white);
+    }
+  }
+
+  &__link {
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    @include max-1440 {
+      .circle-link__text {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    width: fluid(180, 276, 1440, 1920);
+    position: absolute;
+    right: fluid(20, 56, 1440, 1920);
+    bottom: 0;
+    translate: 0 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, translate 0.8s ease-in-out;
+    pointer-events: none;
+
+    @include max-1200 {
+      width: 110px;
+      right: 50px;
+    }
+  }
+}
+
+.categories-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+}

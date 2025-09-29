@@ -1,0 +1,10 @@
+@use "@/scss/helpers" as *;
+
+.about-approach {
+  padding-top: fluid(58, 88);
+  margin-bottom: fluid(59, 80);
+
+  &__title {
+    margin-bottom: fluid(25, 65);
+  }
+}

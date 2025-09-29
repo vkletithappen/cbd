@@ -1,0 +1,88 @@
+@use "@/scss/helpers" as *;
+
+.about-advs {
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 51px;
+
+    @include max-1200 {
+      flex-direction: column;
+      padding-top: 2px;
+      gap: 41px;
+    }
+  }
+
+  &__caption {
+    flex: 0 0 calc(536 / 1578 * 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid-tablet(30, 170);
+  }
+
+  &__list {
+    flex: 0 0 53.7%;
+    padding-top: 6px;
+
+    @include max-1920 {
+      padding-top: 0;
+    }
+  }
+
+  &__desc {
+    max-width: 469px;
+    font-size: fluid(22, 24);
+
+    @include max-1200 {
+      max-width: 100%;
+    }
+  }
+}
+
+
+.list-about-advs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: fluid(34, 88);
+  column-gap: fluid-tablet(60, 120);
+
+  @include max-768 {
+    column-gap: 0;
+  }
+
+  &__item {
+    padding-top: fluid(69, 110);
+    background-image: url('@/assets/img/advs-icon-1.svg');
+    background-repeat: no-repeat;
+    background-size: fluid(52, 72) fluid(52, 72);
+    background-position: left top;
+
+    &--second {
+      background-image: url('@/assets/img/advs-icon-2.svg');
+    }
+
+    &--third {
+      background-image: url('@/assets/img/advs-icon-3.svg');
+    }
+
+    &--fourth {
+      background-image: url('@/assets/img/advs-icon-4.svg');
+    }
+
+    @include max-768 {
+      grid-column: span 2;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    line-height: 1.05;
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--col-black);
+  }
+}

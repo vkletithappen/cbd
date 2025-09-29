@@ -8,6 +8,10 @@
     background-color: var(--col-primary-2);
   }
 
+  &--blog {
+    margin-bottom: 0;
+  }
+
   &__container {
     display: flex;
     align-items: center;
@@ -20,6 +24,10 @@
 
     border-radius: 0 0 30px 30px;
     background-color: var(--col-primary-2);
+
+    &--blog {
+      border-radius: 30px;
+    }
 
     @include max-1440 {
       padding-left: 8px;
@@ -75,9 +83,15 @@
     font-weight: 400;
     font-size: 24px;
     color: var(--col-white);
+    transition: border-color var(--anim-normal), border-width var(--anim-normal);
 
     &:focus-visible {
       outline: none;
+    }
+
+    &:focus {
+      border-width: 2px;
+      border-color: var(--col-white);
     }
 
     &:not(:placeholder-shown)+.form-subscribe__label {

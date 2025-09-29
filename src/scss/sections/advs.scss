@@ -16,6 +16,13 @@
     background-position: center top;
   }
 
+  &--about {
+    @include max-576 {
+      background-image: url('@/assets/img/advs-about-bg-mobile.avif');
+      background-position: center top;
+    }
+  }
+
   &__container {
     padding-top: 80px;
     padding-left: fluid(16, 100);
@@ -29,6 +36,16 @@
     background-size: cover;
     overflow: hidden;
 
+    &--about {
+      padding-top: 143px;
+      padding-bottom: fluid(29, 135);
+
+      @include max-576 {
+        height: 692.5px;
+        padding-bottom: 48px;
+      }
+    }
+
     @include max-1440 {
       background-image: none;
     }
@@ -39,25 +56,40 @@
     flex-direction: column;
     align-items: flex-start;
     height: 100%;
+
+    &--about {
+      @include max-1200 {
+        flex-direction: column-reverse;
+        gap: 29px;
+      }
+    }
   }
 
   &__pretitle {
     margin: 0;
     max-width: 522px;
     font-weight: 400;
-    font-size: 36px;
+    font-size: fluid(22, 36);
     line-height: 1.22;
     letter-spacing: -0.07em;
     color: var(--col-white);
 
     @include max-1440 {
       display: none;
+
+      &--about {
+        display: block;
+      }
     }
   }
 
   &__title {
     margin-top: auto;
     max-width: 852px;
+
+    &--about {
+      max-width: 100%;
+    }
 
     span {
       -webkit-mask-image: linear-gradient(-75deg, rgba(255, 255, 255, .6) 30%, #fff 50%, rgba(255, 255, 255, .6) 70%);
@@ -83,6 +115,11 @@
     background-image: url('@/assets/img/advs-bottom-container-decor.svg');
     background-repeat: no-repeat;
     background-position: right 100px bottom;
+
+    &--about {
+      padding-bottom: fluid(49, 131);
+      background-image: none;
+    }
 
     @include max-1440 {
       background-image: none;
@@ -138,13 +175,13 @@
     }
   }
 
-  &__legal-department {
+  &__legal-section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 88px;
     height: 85px;
-    background-image: url('@/assets/img/leagl-bg.svg');
+    background-image: url('@/assets/img/legal-bg.svg');
     background-repeat: no-repeat;
     background-position: left center;
 
@@ -247,15 +284,5 @@
 
   &__btn {
     padding: 5px 46px;
-  }
-}
-
-@keyframes shine {
-  from {
-    -webkit-mask-position: 150%;
-  }
-
-  to {
-    -webkit-mask-position: -50%;
   }
 }

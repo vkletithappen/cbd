@@ -9,7 +9,7 @@
     --gapOnItems: 122px;
     --gapOnItems: #{fluid(31, 122)};
     --translateDistance: calc(var(--gapOnItems) / 2);
-    --animationDuration: 20s;
+    // --animationDuration: 20s;
 
     animation: scrollAnimation var(--animationDuration) infinite linear;
     display: flex;
@@ -47,11 +47,5 @@
     &--fourth {
       width: fluid(121, 196);
     }
-  }
-}
-
-@keyframes scrollAnimation {
-  to {
-    transform: translateX(calc(-50% - var(--translateDistance)));
   }
 }

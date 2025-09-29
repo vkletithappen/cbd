@@ -1,0 +1,80 @@
+@use "@/scss/helpers" as *;
+
+.card-about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: fluid(26, 39);
+
+  padding-top: fluid(162, 315);
+  padding-left: fluid(24, 40);
+  padding-right: 63px;
+  padding-bottom: fluid(31.5, 43.5);
+
+  border-radius: 15px;
+  background-color: var(--col-white);
+  background-image: url('@/assets/img/card-about-bg-1.svg');
+  background-repeat: no-repeat;
+  background-position: center top fluid(40, 74, 768, 1200);
+  background-size: fluid(85, 170) fluid(85, 170);
+  transition: box-shadow var(--anim-normal), translate var(--anim-normal), scale var(--anim-normal);
+
+  @include max-768 {
+    background-position: left 24px top 39px;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    width: fluid(85, 170);
+    height: fluid(85, 170);
+    background-image: url('@/assets/img/dots-circle-icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: fluid(30, 60, 768, 1200);
+    translate: -50% 0;
+    transform-origin: center;
+    transition: rotate 15s ease-out, scale 1s ease-out;
+
+    @include max-768 {
+      left: 67px;
+      top: 32px;
+    }
+  }
+
+  @include hover {
+    box-shadow: 0 12px 30px 0 rgba(45, 45, 45, 0.18);
+    translate: 0 -10px;
+    scale: 1.03;
+
+    &::after {
+      rotate: 360deg;
+      scale: 0.9;
+    }
+  }
+
+  &--second {
+    background-image: url('@/assets/img/card-about-bg-2.svg');
+  }
+
+  &--third {
+    background-image: url('@/assets/img/card-about-bg-3.svg');
+  }
+
+  &--fourth {
+    background-image: url('@/assets/img/card-about-bg-4.svg');
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(22, 24);
+    line-height: 1.05;
+    color: var(--col-black);
+    text-transform: uppercase;
+  }
+}

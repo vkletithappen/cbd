@@ -23,7 +23,6 @@
 }
 
 .container {
-
   margin-right: auto;
   margin-left: auto;
   padding: 0 var(--container-offset);
@@ -32,104 +31,6 @@
   @include max-1440 {
     --container-offset: #{fluid(16, 32, 375, 1440)};
   }
-}
-
-.section-title-desc {
-  display: block;
-  margin: 0;
-  font-weight: 400;
-  font-size: fluid(22, 36);
-  letter-spacing: -0.07em;
-  line-height: 1.2;
-  color: var(--col-white);
-}
-
-.section-accent-title {
-  margin: 0;
-  font-family: var(--ff-2);
-  font-weight: 400;
-  font-size: fluid(48, 140);
-  line-height: 1.05;
-  color: var(--col-white);
-  text-transform: uppercase;
-
-  &--black {
-    color: var(--col-black);
-  }
-}
-
-.section-title {
-  display: block;
-  margin: 0;
-  font-family: var(--ff-2);
-  font-weight: 400;
-  font-size: fluid(32, 60);
-  line-height: 1.17;
-  color: var(--col-black);
-  text-transform: uppercase;
-
-  &--center {
-    text-align: center;
-
-    @include max-1024 {
-      text-align: left;
-    }
-  }
-
-  @include max-1024 {
-    line-height: 1;
-  }
-}
-
-.section-text {
-  margin: 0;
-  font-family: var(--ff-1);
-  font-weight: 400;
-  font-size: fluid(22, 28);
-  line-height: 1.43;
-  letter-spacing: -0.07em;
-  color: var(--col-black);
-
-  @include max-1024 {
-    line-height: 1.22;
-  }
-
-  &--sm {
-    font-size: 18px;
-    line-height: 1.33;
-  }
-
-  &--center {
-    text-align: center;
-
-    @include max-1024 {
-      text-align: left;
-    }
-  }
-
-  &--white {
-    color: var(--col-white);
-  }
-}
-
-.accent-text-bg {
-  background-image: linear-gradient(to right, var(--col-primary-light-1) 100%, transparent 0);
-  background-size: 0% 100%;
-  background-repeat: no-repeat;
-  background-position: left center;
-  transition: background-size 0.7s ease-in-out;
-
-  &.marked {
-    background-size: 100% 100%;
-  }
-}
-
-.accent-text-primary {
-  background: linear-gradient(90deg, rgba(63, 137, 44, 1) 0%, rgba(83, 181, 139, 1) 50%, rgba(20, 102, 66, 1) 100%);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 7s linear infinite;
 }
 
 .link {
@@ -151,19 +52,5 @@
 
   &:active {
     color: var(--col-primary-2);
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
   }
 }

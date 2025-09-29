@@ -1,0 +1,89 @@
+@use "@/scss/helpers" as *;
+
+.contacts-map {
+
+  &__container {
+    padding: 0 var(--container-offset);
+
+    @include max-1440 {
+      padding: 0;
+    }
+  }
+
+  &__wrapper {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+
+    @include max-1440 {
+      border-radius: 0;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 34px;
+    padding-left: fluid(23, 40);
+    padding-right: fluid(23, 40);
+    padding-bottom: fluid(22.5, 30.5);
+
+
+    min-width: fluid(343, 424);
+    border-radius: 15px;
+    background-color: var(--col-white);
+
+    @include max-1024 {
+      top: initial;
+      bottom: 79px;
+      left: 50%;
+      translate: -50% 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: fluid(27, 91);
+  }
+
+  &__address {
+    margin-bottom: fluid(20, 173);
+    font-style: normal;
+    font-weight: 400;
+    font-size: fluid(18, 28);
+    line-height: 1.45;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+
+    @include max-768 {
+      line-height: 1.25;
+    }
+  }
+
+  &__schedulde {
+    font-weight: 400;
+    font-size: fluid(14, 18);
+    line-height: 1.33;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+  }
+
+  &__btn {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+    min-height: fluid(45, 51);
+    width: fluid(343, 424);
+
+    @include max-1024 {
+      left: 50%;
+      translate: -50% 0;
+    }
+  }
+}

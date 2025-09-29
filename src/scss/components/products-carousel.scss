@@ -1,0 +1,43 @@
+@use "@/scss/helpers" as *;
+
+.products-carousel {
+
+  @include max-1440 {
+    margin-bottom: 22px;
+  }
+
+  &__container {
+    padding-left: var(--container-offset);
+
+    @include max-1440 {
+      --container-offset: #{fluid(8, 32, 375, 1440)};
+    }
+  }
+}
+
+
+.slider-products {
+
+  &__swiper {
+    padding: 80px;
+    margin: -80px;
+
+    @include max-1200 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__slide {
+    flex-shrink: 0;
+    width: fluid(343, 572) !important;
+
+    &--hover {
+      transition: translate var(--anim-long);
+
+      @include hover {
+        translate: 0 -60px;
+      }
+    }
+  }
+}

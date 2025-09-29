@@ -1,0 +1,93 @@
+@use "@/scss/helpers" as *;
+
+.dialog-extended {
+  width: fluid(720, 1164, 768, 1920);
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 30px;
+  background-color: var(--col-white);
+
+  transition:
+    display 0.4s allow-discrete,
+    overlay 0.4s allow-discrete;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: closeDialog 0.4s forwards;
+
+  @include max-768 {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    max-height: 100%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[open] {
+    animation: openDialog 0.4s ease forwards;
+  }
+
+  &__inner {
+    border-radius: inherit;
+    overflow: hidden;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+
+    @include max-768 {
+      min-height: 100vh;
+    }
+
+    // &--video {
+    //   padding: 0;
+    // }
+  }
+
+  &__scroll {
+    overflow-y: auto;
+    padding: 65px 248px 77px 82px;
+    padding-top: fluid(60, 65);
+    padding-right: fluid(24, 248);
+    padding-bottom: 77px;
+    padding-left: fluid(24, 84);
+    flex: 1;
+  }
+
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fluid(24, 36);
+    height: fluid(24, 36);
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    color: var(--col-black);
+    transition: color var(--anim-normal);
+
+    @include hover {
+      color: var(--col-primary-1);
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, background-color 0.4s ease;
+  z-index: 1000;
+
+  &.is-active {
+    background-color: var(--col-black-04);
+    pointer-events: auto;
+    opacity: 1;
+  }
+}

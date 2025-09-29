@@ -1,0 +1,24 @@
+@use "@/scss/helpers" as *;
+
+.yandex-map {
+  display: block;
+  width: 100%;
+  height: 820px;
+}
+
+[class*=ymaps][class*=-ground-pane] {
+  filter: grayscale(1) brightness(0.65);
+  // filter: brightness(0.5);
+  // -ms-filter: grayscale(1);
+  // -webkit-filter: grayscale(1);
+  // -moz-filter: grayscale(1);
+  // -o-filter: grayscale(1);
+}
+
+.ymaps-2-1-79-map-copyrights-promo {
+  display: none !important;
+}
+
+.ymaps-2-1-79-copyright__agreement {
+  display: none !important;
+}

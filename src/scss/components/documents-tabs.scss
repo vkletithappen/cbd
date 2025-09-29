@@ -1,0 +1,75 @@
+@use "@/scss/helpers" as *;
+
+.documents-tabs {
+
+  &__tablist {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 24px;
+
+    &::before {
+      content: "";
+      flex: 0 0 1px;
+      height: 1px;
+    }
+
+    &::after {
+      content: "";
+      flex: 0 0 1px;
+      height: 1px;
+    }
+
+    @include max-1024 {
+      gap: 14px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px fluid(17, 33, 1200, 1920);
+    min-height: fluid(49, 55);
+    border-radius: 45px;
+    font-weight: 400;
+    font-size: fluid(18, 20);
+    letter-spacing: -0.07em;
+    color: var(--col-primary-1);
+    background-color: var(--col-white);
+
+
+    transition: color var(--anim-normal), background-color var(--anim-normal);
+
+
+    @include hover {
+      color: var(--col-primary-2);
+    }
+
+    &.is-active {
+      color: var(--col-white);
+      background-color: var(--col-primary-1);
+    }
+
+  }
+
+  &-content {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: opacity 5s ease, height 0.5s ease, visibility 0s linear 0.5s;
+
+
+    &.is-active {
+
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease, height 0.5s ease, visibility 0s linear 0s;
+      animation: appearanceFromRight 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+  }
+}

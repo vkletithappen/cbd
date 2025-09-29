@@ -1,0 +1,113 @@
+@use "@/scss/helpers" as *;
+
+.legal-section-hero {
+  padding-top: fluid(31, 54);
+
+  &__title {
+    margin-bottom: fluid(28, 46);
+  }
+
+  &__top {
+    @include max-1200 {
+      background-color: var(--col-primary-light-1);
+    }
+  }
+
+  &__top-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 21px;
+    border-radius: 30px 30px 0 0;
+    background-color: var(--col-primary-light-1);
+
+    @include max-768 {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__disclaimer {
+    margin: 0;
+    min-height: 24px;
+    padding-left: 40px;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.07em;
+    color: var(--col-primary-1);
+    background-image: url('@/assets/img/disclaimer-icon.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @include max-768 {
+      background-position: left top;
+    }
+  }
+
+  &__bottom {
+    @include max-1200 {
+      background-color: var(--col-white);
+    }
+
+    @include max-1024 {
+      background-image: url('@/assets/img/legal-section-hero-decor-mobile.svg');
+      background-repeat: no-repeat;
+      background-position: right 38px bottom -2px;
+    }
+  }
+
+  &__bottom-container {
+    padding: fluid(40, 100, 1200, 1920);
+    border-radius: 0 0 30px 30px;
+    background-color: var(--col-white);
+    background-image: url('@/assets/img/legal-section-hero-decor.svg');
+    background-repeat: no-repeat;
+    background-size: 80px 391px;
+    background-position: right 82px bottom;
+
+    @include max-1920 {
+      background-image: none;
+    }
+
+    @include max-1200 {
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 5px;
+    }
+  }
+
+  &__bottom-text {
+    max-width: 1355px;
+    margin-bottom: fluid(46, 97);
+  }
+
+  &__bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1281px;
+
+    @include max-1024 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+
+  &__icon-text {
+    flex: 0 0 calc(900 / 1281 * 100%);
+    background-image: url('@/assets/img/legal-bg.svg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding-left: 165px;
+
+    @include max-1024 {
+      padding-left: 0;
+      padding-top: 110px;
+    }
+
+    @include max-576 {
+      max-width: 296px;
+    }
+  }
+}

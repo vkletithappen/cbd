@@ -1,0 +1,45 @@
+@use "@/scss/helpers" as *;
+
+.about-mission {
+  padding-top: fluid(41, 114);
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 29px;
+    padding-bottom: 155px;
+    border-bottom: 1px solid var(--col-grey-light-1);
+
+    @include max-1440 {
+      padding-bottom: 0;
+      border: none;
+    }
+
+    @include max-1200 {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    flex: 0 0 calc(670 / 1738 * 100%);
+  }
+
+  &__content {
+    flex: 0 0 calc(860 / 1738 * 100%);
+    padding-top: 10px;
+    padding-right: 61px;
+    display: flex;
+    flex-direction: column;
+    gap: fluid(37, 123);
+
+    @include max-1920 {
+      padding-top: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__secondary-text {
+    max-width: 735px;
+  }
+}

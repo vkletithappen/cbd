@@ -1,0 +1,111 @@
+@use "@/scss/helpers" as *;
+
+.regulation {
+  padding-top: fluid(62, 134);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    @include max-1440 {
+      flex-direction: column;
+      gap: 49px;
+    }
+  }
+
+  &__title {
+    flex: 0 0 calc(613 / 1756 * 100%);
+  }
+
+  &__content {
+    padding-top: 6px;
+    flex: 0 0 calc(1016 / 1756 * 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    @include max-1920 {
+      padding-top: 0;
+    }
+  }
+
+  &__content-title {
+
+    @include max-768 {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.item-regulation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: fluid(15, 30, 1200, 1920);
+
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--col-grey-light-1);
+  transition: border-color var(--anim-normal);
+
+  @include max-1024 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @include hover {
+    border-color: var(--col-black);
+
+    .item-regulation__cta {
+      color: var(--col-primary-2);
+    }
+  }
+
+  &__link {
+    padding-left: 85px;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+    background-image: url('@/assets/img/pdf-icon.svg');
+    background-repeat: no-repeat;
+    background-position: left 2px center;
+    transition: color var(--anim-normal);
+
+    @include max-1024 {
+      padding-right: 16px;
+      padding-left: 0;
+      padding-top: 40px;
+      background-position: left top;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      inset: 0;
+    }
+
+    @include hover {
+      color: var(--col-primary-2);
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.07em;
+    color: var(--col-primary-1);
+    transition: color var(--anim-normal);
+  }
+}

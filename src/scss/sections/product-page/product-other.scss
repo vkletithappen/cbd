@@ -1,0 +1,49 @@
+@use "@/scss/helpers" as *;
+
+.product-other {
+  padding-top: fluid(50, 80);
+  padding-bottom: fluid(50, 120);
+  background-color: var(--col-bg-1);
+  overflow: hidden;
+
+  &__caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 125px;
+    margin-bottom: fluid(30, 80);
+
+    @include max-1920 {
+      padding-right: 0;
+      gap: 60px;
+    }
+  }
+
+  &__title {
+    flex: 0 0 calc(624 / 1631 * 100%);
+
+    @include max-1920 {
+      flex: 1;
+    }
+  }
+
+  &__desc {
+    flex: 0 0 calc(555 / 1631 * 100%);
+
+    @include max-1920 {
+      font-size: 20px;
+    }
+
+    @include max-1440 {
+      display: none;
+    }
+  }
+
+  &__link {
+    flex-shrink: 0;
+
+    @include max-1024 {
+      display: none;
+    }
+  }
+}

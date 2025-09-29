@@ -1,0 +1,115 @@
+@use "@/scss/helpers" as *;
+
+.categories-inner-cases {
+  padding-top: fluid(55, 173);
+
+  &__title {
+    margin-bottom: fluid(28, 72);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(16, 40);
+  }
+}
+
+.cases-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: fluid(14, 40, 375, 1200);
+  padding: fluid(12, 25);
+  border-radius: fluid(15, 30);
+  background-color: var(--col-white);
+  transition: box-shadow var(--anim-normal);
+
+  @include max-1200 {
+    flex-direction: column-reverse;
+    padding-bottom: 20px;
+  }
+
+  @include hover {
+    box-shadow: 0 12px 30px 0 rgba(45, 45, 45, 0.18);
+
+    .cases-card__link {
+      background-color: var(--col-primary-1);
+      color: var(--col-white);
+    }
+
+    .cases-card__img img {
+      scale: 1.1;
+    }
+  }
+
+  &__content {
+    flex: 0 0 calc(820 / 1706 * 100%);
+    display: flex;
+    flex-direction: column;
+    padding-top: fluid(30, 63, 1200, 1920);
+    padding-left: fluid(30, 75, 1200, 1920);
+    padding-bottom: 42px;
+    padding-right: 5px;
+
+    @include max-1440 {
+      padding-bottom: 0;
+      padding-left: fluid(7, 30, 375, 1200);
+    }
+
+    @include max-1200 {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: fluid(16, 45);
+    font-size: fluid(24, 60);
+  }
+
+  &__text {
+    margin-bottom: 17px;
+    color: var(--col-blue-1);
+  }
+
+  &__link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fluid(46, 91);
+    height: fluid(46, 91);
+    border-radius: 50%;
+    color: var(--col-primary-1);
+    background-color: var(--col-primary-light-1);
+    transition: color var(--anim-long), background-color var(--anim-long);
+
+    &::after {
+      position: absolute;
+      content: '';
+      inset: 0;
+    }
+  }
+
+  &__link-icon {
+    width: fluid(16, 24);
+    height: auto;
+    transition: color var(--anim-long);
+  }
+
+  &__img {
+    border-radius: fluid(10, 15);
+    overflow: hidden;
+
+    img {
+      transition: scale var(--anim-long);
+    }
+
+    @include max-1200 {
+      img {
+        height: 188px;
+        width: 100%;
+        object-position: center;
+      }
+    }
+  }
+}

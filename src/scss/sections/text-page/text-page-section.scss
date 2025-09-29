@@ -1,0 +1,11 @@
+@use "@/scss/helpers" as *;
+
+.text-page-section {
+  padding-top: fluid(30, 60);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(30, 60);
+  }
+}

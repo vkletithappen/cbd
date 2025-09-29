@@ -1,7 +1,9 @@
 @use "@/scss/helpers" as *;
 
 .btn {
-  @include flex-center(true);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px 32px;
   min-height: fluid-mobile(49, 55);
   border-radius: 30px;

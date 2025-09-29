@@ -1,0 +1,93 @@
+@use "@/scss/helpers" as *;
+
+.read-tabs {
+
+  &__tablist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include max-1200 {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0 50px;
+    }
+
+    @include max-768 {
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    font-weight: 400;
+    font-size: fluid(22, 36);
+    padding: fluid(9.2, 12.5) 0;
+    letter-spacing: -0.07em;
+    color: var(--col-dark-2-03);
+    white-space: nowrap;
+
+    transition: color var(--anim-normal);
+
+    &::after {
+      display: block;
+      content: attr(data-topics-count);
+      font-weight: 400;
+      font-size: fluid(14, 20);
+      letter-spacing: -0.07em;
+      color: var(--col-dark-2-03);
+      position: absolute;
+      right: -38px;
+      top: 19px;
+      transition: color var(--anim-normal);
+
+      @include max-1200 {
+        right: -23px;
+        top: 8px;
+      }
+    }
+
+    @include hover {
+      color: var(--col-primary-2);
+
+      &::after {
+        color: var(--col-primary-2);
+      }
+    }
+
+    &.is-active {
+      color: var(--col-primary-1);
+
+      &::before {
+        rotate: 360deg;
+        scale: 1;
+        opacity: 1;
+      }
+
+      &::after {
+        color: var(--col-primary-1);
+      }
+    }
+
+  }
+
+  &-content {
+    // display: none;
+
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: opacity 0.5s ease, height 0.5s ease, visibility 0s linear 0.5s;
+
+
+    &.is-active {
+      // display: block;
+
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.5s ease, height 0.5s ease, visibility 0s linear 0s;
+      animation: appearanceFromRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+  }
+}

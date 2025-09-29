@@ -1,0 +1,57 @@
+@use "@/scss/helpers" as *;
+
+.blog-inner-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: fluid(38, 66);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: fluid(32, 41);
+  }
+
+  &__date {
+    margin-bottom: 7px;
+    font-weight: 400;
+    font-size: fluid(14, 24);
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+
+    @include max-1440 {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: fluid(19.5, 29);
+    max-width: 1400px;
+    font-weight: 400;
+    font-size: fluid(28, 72);
+    line-height: 1.22;
+    letter-spacing: -0.07em;
+    text-align: center;
+    color: var(--col-black);
+  }
+
+  &__image-container {
+    padding: 0 fluid-tablet(40, 148);
+
+    @include max-768 {
+      padding: 0;
+    }
+  }
+
+  &__img-wrapper {
+    border-radius: 30px;
+    overflow: hidden;
+
+    @include max-768 {
+      border-radius: 0;
+    }
+  }
+}

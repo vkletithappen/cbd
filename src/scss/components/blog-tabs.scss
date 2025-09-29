@@ -112,25 +112,3 @@
     }
   }
 }
-
-@keyframes appearanceFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(60px) scale(0.95);
-    filter: blur(10px);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translateX(-8px) scale(1.03);
-    filter: blur(0);
-  }
-
-  80% {
-    transform: translateX(4px) scale(0.99);
-  }
-
-  100% {
-    transform: translateX(0) scale(1);
-  }
-}

@@ -1,0 +1,108 @@
+@use "@/scss/helpers" as *;
+
+.contacts-hero {
+  padding-top: fluid(30, 94);
+  padding-bottom: fluid(58.5, 99.5);
+
+  &__container {
+    border-bottom: 1px solid var(--col-grey-light-1);
+
+    @include max-1200 {
+      border: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1345px;
+
+    @include max-1440 {
+      max-width: 100%;
+    }
+
+    @include max-768 {
+      flex-direction: column;
+      gap: 27px;
+    }
+  }
+
+  &__caption {
+    position: relative;
+    flex: 0 0 calc(588 / 1345 * 100%);
+    display: flex;
+    flex-direction: column;
+    gap: fluid(30, 199, 1200, 1920);
+    padding-bottom: 141px;
+
+    &::after {
+      display: block;
+      content: '';
+      width: fluid(51, 80);
+      height: fluid(325, 516, 1200, 1920);
+      background-image: url('@/assets/img/contacts-hero-decor.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      @include max-1200 {
+        display: none;
+      }
+    }
+
+    @include max-1200 {
+      padding-bottom: 0;
+    }
+  }
+
+  &__content {
+    flex: 0 0 calc(610 / 1345 * 100%);
+    padding-top: fluid(0, 6, 1440, 1920);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__phone {
+    padding-top: fluid(20, 40);
+    margin-bottom: fluid(25, 114);
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(24, 60);
+    color: var(--col-black);
+  }
+
+  &__email {
+    position: relative;
+    left: 6px;
+    color: currentColor;
+    transition: color var(--anim-normal);
+
+    @include hover {
+      color: var(--col-primary-1);
+    }
+  }
+}
+
+.contacts-hero-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: fluid(18, 28);
+  line-height: 1.42857;
+  letter-spacing: -0.07em;
+  color: var(--col-black);
+
+  &--grey {
+    max-width: 399px;
+    color: var(--col-grey-light-2);
+
+    @include max-768 {
+      display: none;
+    }
+  }
+
+  @include max-768 {
+    line-height: 1.25;
+  }
+}

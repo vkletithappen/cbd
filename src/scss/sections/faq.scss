@@ -1,0 +1,74 @@
+@use "@/scss/helpers" as *;
+
+.faq {
+  padding-top: fluid(58, 122);
+  padding-bottom: fluid(60, 139.5);
+
+  &--production {
+    padding-top: 102px;
+    padding-bottom: 120px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include max-1200 {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  &__title {
+    flex: 0 0 calc(340 / 1756 * 100%);
+    padding-top: 21px;
+
+    @include max-1440 {
+      padding-top: 0;
+    }
+  }
+
+  &__content {
+    flex: 0 0 calc(1191 / 1756 * 100%);
+    display: flex;
+    flex-direction: column;
+    margin-right: 36px;
+
+    @include max-1920 {
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: fluid(33, 39);
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: fluid-mobile(24, 40);
+
+    @include max-768 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__cta-text {
+    font-size: fluid(15, 24);
+  }
+
+  &__cta-btn {
+    flex-shrink: 0;
+    font-size: fluid(18, 24);
+
+    @include max-576 {
+      align-self: center;
+      width: 100%;
+    }
+  }
+}

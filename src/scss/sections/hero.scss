@@ -1,11 +1,12 @@
 @use "@/scss/helpers" as *;
 
 .hero {
-  padding-top: fluid(55, 103);
+  padding-top: fluid(55, 100);
   background-image: url('@/assets/img/hero-bg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
+  overflow: hidden;
 
   @include max-768 {
     background-image: url('@/assets/img/hero-bg-mobile.avif');
@@ -34,7 +35,7 @@
 
     @include max-768 {
       padding-left: 16px;
-      padding-bottom: 40.5px;
+      padding-bottom: 38px;
     }
   }
 

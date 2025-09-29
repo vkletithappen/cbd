@@ -1,0 +1,40 @@
+@use "@/scss/helpers" as *;
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px fluid(10, 14);
+
+  &--dark-text {
+
+    .tags-list__text {
+      color: var(--col-black);
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 12px;
+    min-height: fluid(32, 40, 1440, 1920);
+    border-radius: 30px;
+    background-color: var(--col-primary-light-1);
+
+    &--blog-inner {
+      min-height: 40px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: fluid(14, 20, 1440, 1920);
+    letter-spacing: -0.07em;
+    color: var(--col-primary-1);
+
+    &--blog-inner {
+      font-size: fluid(18, 20);
+    }
+  }
+}

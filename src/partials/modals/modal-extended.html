@@ -1,0 +1,42 @@
+<div class="backdrop" data-dialog-backdrop="modal-extended"></div>
+<dialog class="dialog-extended" data-dialog="modal-extended" tabindex="-1">
+  <div class="dialog-extended__inner" data-dialog-inner>
+    <div class="dialog-extended__scroll">
+      <form action="#!" class="extended-form">
+        <div class="extended-form__caption">
+          <h3 class="extended-form__title" data-dialog-title-for-change>Запросить консультацию</h3>
+        </div>
+        <div class="extended-form__fieldset">
+          <div class="extended-form__field extended-form__field--lg">
+            <input type="text" class="input-reset extended-form__input" id="modal-extended-name" autocomplete="name" placeholder="">
+            <label class="extended-form__label" for="modal-extended-name">Имя или организация</label>
+          </div>
+          <div class="extended-form__field">
+            <input type="tel" class="input-reset extended-form__input js-phone" id="modal-extended-phone" autocomplete="tel" placeholder="" required>
+            <label class="extended-form__label" for="modal-extended-phone">Номер телефона</label>
+            <p class="input-error-message">Введите корректный номер телефона</p>
+          </div>
+          <div class="extended-form__field">
+            <input type="email" class="input-reset extended-form__input" id="modal-extended-email" autocomplete="email" placeholder="" required>
+            <label class="extended-form__label" for="modal-extended-email">Электронная почта</label>
+          </div>
+          <div class="extended-form__field extended-form__field--lg">
+            <textarea class="extended-form__textarea" name="modal-extended-textarea" id="modal-extended-textarea" placeholder="Текст обращения"
+              oninput="this.style.height = ''; this.style.height = this.scrollHeight +'px'"></textarea>
+          </div>
+        </div>
+        <div class="extended-form__actions">
+          <span class="extended-form__agreement">
+            Нажимая «Отправить заявку» вы соглашаетесь с обработкой персональных даннных
+          </span>
+          <button class="btn-reset btn btn--lg extended-form__btn" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+    </div>
+    <button class="btn-reset dialog-extended__close" data-dialog-close>
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 16.6416L1.35846 0L0 1.35849L16.6415 18.0001L0.00011726 34.6415L1.35869 36L18 19.3586L34.6413 36L35.9999 34.6415L19.3585 18.0001L36 1.35849L34.6415 0L18 16.6416Z" />
+      </svg>
+    </button>
+  </div>
+</dialog>

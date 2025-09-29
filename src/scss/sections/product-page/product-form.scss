@@ -1,0 +1,15 @@
+@use "@/scss/helpers" as *;
+
+.product-form {
+  padding-top: fluid(58, 114);
+  padding-bottom: fluid(60.5, 119.5);
+  background-color: var(--col-white);
+
+  &__container {
+    max-width: 1574px;
+
+    @include max-1920 {
+      max-width: 100%;
+    }
+  }
+}

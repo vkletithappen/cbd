@@ -1,0 +1,31 @@
+<div class="backdrop" data-dialog-backdrop="modal-compact"></div>
+<dialog class="dialog" data-dialog="modal-compact" tabindex="-1">
+  <div class="dialog__inner" data-dialog-inner>
+    <form action="#!" class="compact-form">
+      <div class="compact-form__caption">
+        <h3 class="compact-form__title" data-dialog-title-for-change>Оставить заявку</h3>
+        <p class="compact-form__desc">
+          Оставьте номер телефона и мы перезвоним вам
+        </p>
+      </div>
+      <div class="compact-form__fieldset">
+        <div class="compact-form__field">
+          <input type="tel" class="input-reset compact-form__input js-phone" id="callback-phone" autocomplete="tel" placeholder="" required>
+          <label class="compact-form__label" for="callback-phone">Номер телефона</label>
+          <p class="input-error-message">Введите корректный номер телефона</p>
+        </div>
+      </div>
+      <div class="compact-form__actions">
+        <span class="compact-form__agreement">
+          Нажимая «Отправить заявку» вы соглашаетесь с обработкой персональных даннных
+        </span>
+        <button class="btn-reset btn btn--lg compact-form__btn" type="submit">Отправить заявку</button>
+      </div>
+    </form>
+    <button class="btn-reset dialog__close" data-dialog-close>
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 16.6416L1.35846 0L0 1.35849L16.6415 18.0001L0.00011726 34.6415L1.35869 36L18 19.3586L34.6413 36L35.9999 34.6415L19.3585 18.0001L36 1.35849L34.6415 0L18 16.6416Z" />
+      </svg>
+    </button>
+  </div>
+</dialog>

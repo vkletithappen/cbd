@@ -30,5 +30,35 @@ export default defineConfig({
         replacement: fileURLToPath(new URL('./src', import.meta.url))
       },
     ]
-  }
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        about: resolve(__dirname, 'about-page.html'),
+        blogInner: resolve(__dirname, 'blog-inner.html'),
+        blogPage: resolve(__dirname, 'blog-page.html'),
+        categoriesInner: resolve(__dirname, 'categories-inner.html'),
+        categoriesPage: resolve(__dirname, 'categories-page.html'),
+        contacts: resolve(__dirname, 'contacts.html'),
+        legalSection: resolve(__dirname, 'legal-section.html'),
+        productPage: resolve(__dirname, 'product-page.html'),
+        production: resolve(__dirname, 'production.html'),
+      }
+    }
+  },
+  optimizeDeps: {
+    force: true,
+  },
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 1000, // можно увеличить интервал (меньше нагрузка на CPU)
+    },
+  },
 })
+
+
+
+
+

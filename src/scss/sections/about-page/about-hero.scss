@@ -1,0 +1,51 @@
+@use "@/scss/helpers" as *;
+
+.about-hero {
+  position: relative;
+  padding-top: fluid(35, 119);
+  padding-bottom: fluid(273, 355);
+  background-image: url('@/assets/img/about-hero-bg.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  @include max-576 {
+    background-image: url('@/assets/img/about-hero-bg-mobile.avif');
+    background-position: center bottom;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    width: fluid-tablet(375, 793);
+    height: fluid-tablet(187, 399);
+    background-image: url('@/assets/img/about-hero-decor.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @include max-768 {
+      left: 50%;
+      translate: -50% 0;
+    }
+
+    @include max-375 {
+      width: 320px;
+      height: 161px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: fluid(30, 109);
+    max-width: 897px;
+
+    @include max-1200 {
+      padding: 0 16px;
+      flex-direction: column;
+    }
+  }
+}

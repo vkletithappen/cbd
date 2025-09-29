@@ -1,0 +1,44 @@
+@use "@/scss/helpers" as *;
+
+.production-hero {
+  padding-top: fluid(31, 54);
+
+  &__title {
+    margin-bottom: fluid(27.5, 46);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    @include max-1440 {
+      gap: 16px;
+    }
+  }
+
+  &__item {
+    transition: transform var(--anim-normal);
+
+    &:first-child {
+      .production-card {
+        border-radius: 15px 15px 0 0;
+
+        @include max-1440 {
+          border-radius: 15px;
+        }
+      }
+    }
+
+    &:last-child {
+      .production-card {
+        border-radius: 0 0 15px 15px;
+
+        @include max-1440 {
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+
+}

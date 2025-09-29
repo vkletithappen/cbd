@@ -1,0 +1,135 @@
+@use "@/scss/helpers" as *;
+
+.documents {
+  padding-top: fluid(57, 166);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: calc(var(--container-offset) - 24px);
+    margin-bottom: fluid(24.5, 65);
+
+    @include max-1440 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 26px;
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    flex: 0 0 calc(410 / 1756 * 100%);
+    padding-left: var(--container-offset);
+
+    @include max-1440 {
+      padding-left: fluid(16, 32, 375, 1440);
+    }
+  }
+
+  &__tabs-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.list-documents {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: fluid(16, 20);
+
+  &__item {
+    grid-column: span 3;
+    border-radius: 15px;
+    background-color: var(--col-white);
+
+    padding-top: fluid(141, 263);
+    padding-left: fluid(24, 40, 1440, 1920);
+    padding-right: fluid(24, 40, 1440, 1920);
+    padding-bottom: fluid(24, 40);
+
+    background-image: url('@/assets/img/documents-bg-icon.svg');
+    background-repeat: no-repeat;
+    background-size: fluid(71.5, 95) fluid(71.5, 95);
+    background-position: left fluid(24, 40) top fluid(29, 44);
+    transition: box-shadow var(--anim-normal);
+
+    @include max-1440 {
+      grid-column: span 4;
+    }
+
+    @include max-1024 {
+      grid-column: span 6;
+    }
+
+    @include max-768 {
+      grid-column: span 12;
+    }
+
+    @include hover {
+      box-shadow: 0 12px 30px 0 rgba(45, 45, 45, 0.18);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(22, 24, 1440, 1920);
+    line-height: 1.05;
+    color: var(--col-black);
+
+    @include max-768 {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__date {
+    margin-bottom: fluid(24, 33);
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: -0.07em;
+    color: var(--col-black);
+  }
+
+  &__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    min-height: 55px;
+    width: 100%;
+    border-radius: 45px;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: -0.07em;
+    color: var(--col-white);
+    background-color: var(--col-primary-1);
+    transition: background-color var(--anim-normal);
+
+    @include hover {
+      background-color: var(--col-primary-2);
+    }
+  }
+
+  &__btn-icon {
+    position: absolute;
+    right: fluid(16, 24);
+    top: 50%;
+    translate: 0 -50%;
+  }
+}

@@ -1,0 +1,140 @@
+@use "@/scss/helpers" as *;
+
+.categories-inner-hero {
+  padding-top: 40px;
+
+  @include max-1200 {
+    padding-top: 0;
+  }
+
+  &__wrapper {
+    @include max-1200 {
+      background-image: url('@/assets/img/categories-inner-hero-bg.avif');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @include max-576 {
+
+      background-image: url('@/assets/img/categories-inner-hero-bg-mobile.avif');
+    }
+  }
+
+  &__container {
+    border-radius: 30px;
+    overflow: hidden;
+    background-image: url('@/assets/img/categories-inner-hero-bg.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding-top: fluid(40, 94, 1200, 1920);
+    padding-left: fluid(40, 100, 1200, 1920);
+    padding-right: 268px;
+    padding-bottom: fluid(66, 131);
+
+    @include max-1920 {
+      padding-right: fluid(40, 100, 1200, 1920);
+    }
+
+    @include max-1200 {
+      background-image: none;
+
+      padding-top: 35px;
+      padding-left: 16px;
+      padding-right: 10px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    @include max-1024 {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 47px;
+    }
+  }
+
+  &__content {
+    flex: 0 0 calc(849 / 1388 * 100%);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: fluid(30, 73);
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(48, 90);
+    line-height: 1.045;
+    color: var(--col-white);
+    text-transform: uppercase;
+
+    &--desktop {
+
+      @include max-768 {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include max-768 {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__img {
+    padding-top: 58px;
+    flex: 0 0 calc(324 / 1388 * 100%);
+    width: fluid(165, 324, 375, 1200);
+
+    @include max-1024 {
+      padding-top: 0;
+      align-self: center;
+    }
+  }
+
+  &__list {
+    margin-top: -215px;
+    margin-top: calc(-1 * fluid(40, 215, 1024, 1920));
+    display: flex;
+    gap: fluid(31, 126);
+
+    @include max-1024 {
+      margin-top: 0;
+    }
+
+    @include max-768 {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(12, 27);
+  }
+
+  &__number {
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: fluid(32, 48);
+    color: var(--col-white);
+  }
+
+  &__number-desc {
+    margin: 0;
+    max-width: 356px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.07em;
+    color: var(--col-white);
+  }
+}

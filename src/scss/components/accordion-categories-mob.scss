@@ -1,0 +1,127 @@
+@use "@/scss/helpers" as *;
+
+@use "@/scss/helpers" as *;
+
+.accordion-categories-mob {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('@/assets/img/categories-hero-card-bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+    translate: 0 100%;
+    transition: opacity var(--anim-normal), translate var(--anim-normal);
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    padding: 29px 24px 25px 24px;
+    background-color: var(--col-white);
+    border-radius: 15px;
+
+    transition: background-color var(--anim-normal);
+  }
+
+  &__title {
+    font-family: var(--ff-2);
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--col-black);
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.05;
+    transition: color var(--anim-normal);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('@/assets/img/accordion-categories-mob-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--col-primary-light-1);
+    transition: rotate var(--anim-normal);
+  }
+
+  &__content {
+    box-sizing: content-box;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition:
+      max-height 0.6s ease-in-out,
+      opacity 0.6s ease-in-out;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__img {
+    translate: 0 100%;
+    transition: translate 0.6s ease-in-out;
+  }
+
+  &__link {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-image: url('@/assets/img/accordion-categories-mob-link.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  &.open {
+
+    &::after {
+      opacity: 1;
+      translate: 0 0;
+    }
+
+    .accordion-categories-mob__title {
+      color: var(--col-white);
+    }
+
+    .accordion-categories-mob__icon {
+      rotate: -180deg;
+    }
+
+    .accordion-categories-mob__control {
+      background-color: transparent;
+    }
+
+    .accordion-categories-mob__img {
+      translate: 0 0;
+    }
+  }
+
+  &.open &__content {
+    opacity: 1;
+  }
+}
