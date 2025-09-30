@@ -57,19 +57,20 @@
   }
 
   &-content {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    transition: opacity 5s ease, height 0.5s ease, visibility 0s linear 0.5s;
+    // opacity: 0;
+    // visibility: hidden;
+    // height: 0;
+    display: none;
+    transition: opacity 0.5s ease, height 0.5s ease, visibility 0s linear 0.5s;
 
 
     &.is-active {
 
-      height: auto;
-      opacity: 1;
-      visibility: visible;
+      display: block;
+      // height: auto;
+      // opacity: 1;
+      // visibility: visible;
       transition: opacity 0.5s ease, height 0.5s ease, visibility 0s linear 0s;
-      animation: appearanceFromRight 1s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
   }
 }

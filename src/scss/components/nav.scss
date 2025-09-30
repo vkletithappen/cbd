@@ -4,8 +4,9 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: fluid(40, 51, 1440, 1920);
+    gap: 10px fluid(40, 51, 1440, 1920);
   }
 
   &__link {

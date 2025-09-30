@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
   }
 
   &__data {
@@ -33,6 +34,7 @@
   }
 
   &__actions {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: fluid(30, 42, 1440, 1920);

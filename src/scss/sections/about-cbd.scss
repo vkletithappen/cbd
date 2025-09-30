@@ -139,14 +139,15 @@
 
 .cloud {
   position: absolute;
-  top: 0;
   animation: cloudAnimate calc(2s * var(--animation-duration)) linear infinite;
 
   &--left {
+    top: 0;
     left: 0;
   }
 
   &--right {
+    top: 0;
     right: 0;
   }
 }

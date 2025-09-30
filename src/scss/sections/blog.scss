@@ -1,6 +1,7 @@
 @use "@/scss/helpers" as *;
 
 .blog {
+  overflow: hidden;
 
   @include max-1440 {
     background-color: var(--col-white);
