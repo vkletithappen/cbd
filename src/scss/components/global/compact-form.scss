@@ -61,6 +61,7 @@
     letter-spacing: -0.07em;
     color: var(--col-black);
     background-color: transparent;
+    transition: border-color var(--anim-normal);
 
     &:not(:placeholder-shown)+.compact-form__label {
       translate: -1px -45px;
@@ -69,6 +70,10 @@
 
     &:focus-visible {
       outline: none;
+    }
+
+    &:focus {
+      border-color: var(--col-black);
     }
   }
 
