@@ -31,6 +31,36 @@
     }
   }
 
+  &--second {
+    &::after {
+      background-image: url('@/assets/img/categories-product-2.avif');
+    }
+  }
+
+  &--third {
+    &::after {
+      background-image: url('@/assets/img/categories-product-3.avif');
+    }
+  }
+
+  &--fourth {
+    &::after {
+      background-image: url('@/assets/img/categories-product-4.avif');
+    }
+  }
+
+  &--fifth {
+    &::after {
+      background-image: url('@/assets/img/categories-product-5.avif');
+    }
+  }
+
+  &--sixth {
+    &::after {
+      background-image: url('@/assets/img/categories-product-6.avif');
+    }
+  }
+
   &__control {
     display: flex;
     align-items: center;
