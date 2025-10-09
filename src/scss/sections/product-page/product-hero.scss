@@ -171,7 +171,7 @@
     height: 78px;
     backdrop-filter: blur(30px);
     background: var(--col-black-03);
-    z-index: 1000;
+    z-index: 2;
 
     @include max-768 {
       display: flex;
