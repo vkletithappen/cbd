@@ -30,14 +30,14 @@ class Accordion {
   open() {
     this.accordion.classList.add('open');
     this.control.setAttribute('aria-expanded', true);
-    this.content.setAttribute('aria-hidden', false);
+    // this.content.setAttribute('aria-hidden', false);
     this.content.style.maxHeight = `${this.content.scrollHeight}px`;
   }
 
   close() {
     this.accordion.classList.remove('open');
     this.control.setAttribute('aria-expanded', false);
-    this.content.setAttribute('aria-hidden', true);
+    // this.content.setAttribute('aria-hidden', true);
     this.content.style.maxHeight = null;
   }
 
